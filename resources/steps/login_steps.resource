@@ -10,12 +10,15 @@ Recurso             ../pages/login_page.resource
 
 *** Palavras-Chave ***
 que a tela de login do sistema carregou
-    Esperar a tela de cadastro carregar
+    Esperar a tela de login carregar
+
+
+abro a página de login para autenticar
+    Abrir a página de login
 
 
 preencho corretamente meus dados de login
     [Arguments]     ${email}       ${senha}
-
     Preencher campo de e-mail      ${email}
     Preencher campo de senha       ${senha}
 
@@ -25,13 +28,13 @@ submeto o formulário para entrar
 
 
 devo visualizar a Serverest Store
-    Wait Until Page Contains           Serverest Store  timeout=5s
+    Esperar a loja carregar
 
 
 devo visualizar as opções restritas
-    Wait Until Page Contains Element   xpath: //button[text() = 'Logout']
-    
+    Esperar as opções restritas carregarem
+
 
 não devo mais visualizar a tela de login
-    Page Should Not Contain            Login
+    Page Should Not Contain    Login
     Capture Page Screenshot
